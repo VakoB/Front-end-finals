@@ -1,0 +1,466 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+@import url("https://db.onlinewebfonts.com/c/2b1a01fc738e9389822a76a2a230d74a?family=Integral+CF+Bold");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+html {
+  font-family: Satoshi;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/* global variables */
+
+:root {
+  --side-spacing: 100px;
+  --background-secondary: #f2f0f1;
+  --light-text-color: #00000099;
+}
+
+/******* header content ******/
+
+/* header - promotion bar*/
+
+.promotion-bar {
+  display: flex;
+  height: 38px;
+  background-color: black;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.promotion-text {
+  padding-inline: 50px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.promotion-text a {
+  color: white;
+  font-family: Satoshi;
+  font-weight: 500;
+  line-height: 18.9px;
+  text-align: left;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.promotion-close-button {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 100px;
+}
+
+.promotion-close-button:hover {
+  cursor: pointer;
+}
+
+.promotion-close-button img {
+  width: 100%;
+  height: 100%;
+}
+
+/* header - navbar */
+
+header {
+  text-align: center;
+}
+
+.navbar-header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 24px var(--side-spacing);
+  /* flex-wrap: wrap; */
+  font-size: 16px;
+}
+
+.logo {
+  font-family: Alfa Slab One;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 43.81px;
+  text-align: left;
+}
+
+.logo a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-header ul {
+  display: flex;
+  gap: 24px;
+}
+
+.navbar-header ul a {
+  text-decoration: none;
+  color: black;
+}
+
+.search-bar {
+  display: flex;
+  padding: 12px 16px 12px 16px;
+  gap: 12px;
+  border-radius: 62px;
+  opacity: 0px;
+  background-color: #f0f0f0;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.search-bar input {
+  background-color: #f0f0f0;
+  border: none;
+  width: 100%;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.personal-navbar {
+  display: flex;
+  gap: 14px;
+}
+
+/******* main content ******/
+
+/* main - banner */
+
+.main-banner {
+  background-color: var(--background-secondary);
+}
+
+.banner-image {
+  height: 663px;
+  width: 100%;
+  min-width: 400px;
+  background: url("/assets/main-cover-image.jpg");
+  position: relative;
+  min-height: 448px;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.star1 {
+  position: absolute;
+  top: 275px;
+}
+
+.star2 {
+  position: absolute;
+  top: 75px;
+  right: 0;
+}
+
+.banner-content {
+  margin-inline: var(--side-spacing);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.banner-title {
+  font-family: Alfa Slab One;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 64px;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.banner-text {
+  word-wrap: break-word;
+}
+
+.banner-description {
+  max-width: 545px;
+  font-family: Satoshi;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+  margin-top: 30px;
+  color: var(--light-text-color);
+}
+
+.shop-now-button {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  top: 507px;
+  left: 100px;
+  padding: 16px 54px 16px 54px;
+  gap: 12px;
+  border-radius: 62px;
+  opacity: 0px;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 47px;
+}
+
+.achievements {
+  display: flex;
+  margin-top: 48px;
+  max-width: 596px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.achievement-number {
+  font-family: Satoshi;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 54px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.achievement-criteria {
+  font-family: Satoshi;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--light-text-color);
+}
+
+.line {
+  width: 1px;
+  height: auto;
+  background-color: #0000001a;
+  align-self: stretch;
+}
+
+/* main - brands */
+
+.brands {
+  background-color: black;
+  display: flex;
+  min-height: 122px;
+  flex-wrap: wrap;
+  padding-inline: var(--side-spacing);
+  justify-content: space-between;
+}
+
+.brands div:nth-child(2),
+.brands div:nth-child(3),
+.brands div:nth-child(4) {
+  align-self: center;
+}
+
+/* main - products */
+
+.new-arrivals {
+  text-align: center;
+  padding-inline: var(--side-spacing);
+}
+
+.new-arrivals h2 {
+  font-family: Alfa Slab One;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 65.71px;
+  text-align: center;
+  padding-top: 68px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 47px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+}
+
+.product:hover {
+  cursor: pointer;
+}
+
+.product-image {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+.product-image img {
+  width: 100%;
+  height: 298px;
+  object-fit: contain;
+  transition: all 0.3s;
+}
+
+.product:hover .product-image img {
+  transform: scale(1.1);
+}
+
+.product-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-top: 16px;
+}
+
+.rating {
+  margin-top: 8px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  height: 18px;
+  font-size: 14px;
+  gap: 13px;
+}
+
+.product-price {
+  font-family: Satoshi;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32.4px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-top: 8px;
+}
+
+.rating span {
+  color: var(--light-text-color);
+}
+
+/* dressing categories  */
+
+.categories {
+  background-color: #F0F0F0;
+  padding: 70px 64px 76px 64px;
+  margin: 68px 101px 0 101px;
+  border-radius: 40px;
+}
+
+.categories h2 {
+  font-family: "Integral CF Bold";
+  font-size: 48px;
+  line-height: 57.6px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.category-container {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.category-row {
+  display: flex;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48.6px;
+  text-align: left;
+  gap: 20px;
+}
+
+/* .row-2 {
+
+}
+
+.row-1 {
+  
+} */
+
+
+.casual {
+  background: url('../assets/casual-clothes-image.svg');
+  flex: 1;
+}
+
+.formal {
+  background: url('../assets/formal-clothes-image.svg');
+  flex: 2;
+}
+
+.party {
+  background: url('../assets/party-clothes-image.svg');
+  flex: 2;
+}
+
+.gym {
+  background: url('../assets/gym-clothes-image.svg');
+  flex: 1;
+}
+
+.category {
+  height: 289px;
+  padding: 25px 0 0 36px;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.category:hover {
+  cursor: pointer;
+}
+
+/* main - review */
+
+
+
+
+@media (max-width: 1170px) {
+  :root {
+    --side-spacing: 10px;
+  }
+
+  .banner-title {
+    font-size: 36px;
+    line-height: 64px;
+  }
+
+  .achievement-number {
+    font-size: 24px;
+  }
+
+  .achievement-criteria {
+    font-size: 12px;
+  }
+
+  .products {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* Allow wrapping and flexible column sizes */
+  }
+}
