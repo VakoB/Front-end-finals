@@ -55,3 +55,17 @@ async function fillData() {
 
 
 fillData();
+
+function arrowsFunctionality() {
+  const arrows = document.querySelectorAll('.slider-arrow');
+  const sliderContainer = document.querySelector('.reviews-container');
+  arrows.forEach((arrow) => {
+    arrow.addEventListener('click', () => {
+      const arrowDirection = arrow.id == "left-slider-arrow" ? -1 : 1;
+      const scrollAmount = arrowDirection * sliderContainer.clientWidth;
+      sliderContainer.scrollBy({left: scrollAmount, behavior:"smooth"})
+    })
+  })
+}
+
+window.addEventListener('load', arrowsFunctionality)

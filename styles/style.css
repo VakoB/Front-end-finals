@@ -297,12 +297,12 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
-  margin-top: 47px;
 }
 
 .product {
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .product:hover {
@@ -468,6 +468,10 @@ main {
   scroll-behavior: smooth;
 }
 
+.reviews-container::-webkit-scrollbar {
+  display: none;
+}
+
 .review {
   width: 400px;
   border: 1px solid #0000001a;
@@ -510,9 +514,20 @@ main {
 
 .swiper-arrows {
   display: flex;
-  gap: 16px;
+  gap: 8px;
   justify-content: end;
   margin-top: 43px;
+}
+
+.slider-arrow {
+  padding: 7px;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.slider-arrow:hover {
+  cursor: pointer;
+  background-color: var(--background-secondary);
 }
 
 /************* footer ************/
@@ -694,8 +709,8 @@ footer {
   letter-spacing: 3px;
 }
 
-.footer-nav-item {
-}
+/* .footer-nav-item {
+} */
 
 .footer-nav-item ul {
   margin-top: 26px;
