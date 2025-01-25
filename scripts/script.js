@@ -1,3 +1,4 @@
+let products = [];
 function ratingStars(rating) {
   let roundedRating = roundToHalf(rating); // 4.4 -> 4.5
   let wholeNumber = Math.floor(roundedRating);
@@ -30,16 +31,16 @@ function card(imageSrc, title, rating, price) {
           `;
 }
 
-async function fetchData(url) {
-  const response = await fetch(url);
-  const result = response.json();
-  return result;
+async function fetchData() {
+  const response = await fetch("https://fakestoreapi.com/products");
+  products = (await response.json()).slice(0,8);
+  renderData(products);
 }
 
-async function fillData() {
-  const result = await fetchData("https://fakestoreapi.com/products");
+async function renderData(productArray) {
   const container = document.querySelector(".products");
-  result.slice(0, 8).forEach((element) => {
+  container.innerHTML = "";
+  productArray.forEach((element) => {
     const item = document.createElement("div");
     item.classList.add("product");
     item.innerHTML = card(
@@ -52,20 +53,36 @@ async function fillData() {
   });
 }
 
-
-
-fillData();
-
 function arrowsFunctionality() {
-  const arrows = document.querySelectorAll('.slider-arrow');
-  const sliderContainer = document.querySelector('.reviews-container');
+  const arrows = document.querySelectorAll(".slider-arrow");
+  const sliderContainer = document.querySelector(".reviews-container");
   arrows.forEach((arrow) => {
-    arrow.addEventListener('click', () => {
+    arrow.addEventListener("click", () => {
       const arrowDirection = arrow.id == "left-slider-arrow" ? -1 : 1;
       const scrollAmount = arrowDirection * sliderContainer.clientWidth;
-      sliderContainer.scrollBy({left: scrollAmount, behavior:"smooth"})
-    })
-  })
+      sliderContainer.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+  });
 }
 
-window.addEventListener('load', arrowsFunctionality)
+function filterData() {
+  const input = document.querySelector(".search-bar input");
+  input.addEventListener("input", () => {
+    console.log(products);
+    let filteredArray = products.filter((element) =>
+      element.title.toUpperCase().includes(input.value.toUpperCase())
+    );
+    console.log(filteredArray);
+    
+    renderData(filteredArray);
+  });
+}
+
+async function init() {
+  await fetchData();
+  filterData();
+}
+
+init();
+
+window.addEventListener("load", arrowsFunctionality);
