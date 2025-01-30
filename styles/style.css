@@ -125,6 +125,10 @@ header {
   color: black;
 }
 
+.navigation-container li:first-child:hover {
+  cursor: pointer;
+}
+
 .search-bar {
   display: flex;
   padding: 12px 16px 12px 16px;
