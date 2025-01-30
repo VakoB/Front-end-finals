@@ -1049,9 +1049,12 @@ footer {
   }
 
   .top-selling {
-    padding-top: 40px;
     border-top: 1px #0000001a solid;
     padding-inline: var(--side-spacing);
+  }
+
+  .top-selling h2 {
+    padding-top: 40px;
   }
 
   .products-section h2 {

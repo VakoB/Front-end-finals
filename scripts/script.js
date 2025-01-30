@@ -108,21 +108,34 @@ function burgerMenu() {
   const burgerMenuButton = document.querySelector(".burger-menu");
   const burgerIcon = document.querySelector(".burger-menu img");
   const navContainer = document.querySelector(".navigation-container");
+  const navList = document.querySelectorAll(".navigation-container li");
+
+  let openBurgerMenu = () => {
+    burgerIcon.src = "./assets/close-icon.svg";
+    navContainer.classList.add("active");
+  };
+
+  let closeBurgerMenu = () => {
+    burgerIcon.src = "./assets/burger-menu-icon.svg";
+    navContainer.classList.remove("active");
+  };
 
   burgerMenuButton.addEventListener("click", () => {
     // Check if the current icon is the burger menu icon
     if (burgerIcon.src.includes("burger-menu-icon.svg")) {
-      burgerIcon.src = "./assets/close-icon.svg";
-      navContainer.classList.add("active");
+      openBurgerMenu();
     } else {
-      burgerIcon.src = "./assets/burger-menu-icon.svg";
-      navContainer.classList.remove("active");
+      closeBurgerMenu();
     }
+    navList.forEach((item) => {
+      item.addEventListener("click", () => {
+        closeBurgerMenu();
+      });
+    });
   });
 }
 
 init();
 burgerMenu();
-
 
 window.addEventListener("load", arrowsFunctionality);
