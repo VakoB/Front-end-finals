@@ -33,12 +33,13 @@ function card(imageSrc, title, rating, price) {
 
 async function fetchData() {
   const response = await fetch("https://fakestoreapi.com/products");
-  products = (await response.json()).slice(0,8);
+  products = (await response.json()).slice(0, 8);
   renderData(products);
 }
 
 async function renderData(productArray) {
   const container = document.querySelector(".products");
+  const viewAllButton = document.querySelector(".view-all-button");
   container.innerHTML = "";
   productArray.forEach((element) => {
     const item = document.createElement("div");
@@ -50,6 +51,26 @@ async function renderData(productArray) {
       element.price
     );
     container.appendChild(item);
+  });
+
+  // show products button for <=768px
+  const productItems = document.querySelectorAll(
+    ".product:not(:nth-child(-n+2))"
+  );
+
+  let expanded;
+  viewAllButton.addEventListener("click", function () {
+    productItems.forEach((item) => {
+      if (item.classList.contains("expand")) {
+        expanded = false;
+      } else {
+        expanded = true;
+      }
+
+      item.classList.toggle("expand");
+    });
+
+    viewAllButton.textContent = expanded ? "View Less" : "View All";
   });
 }
 
@@ -73,7 +94,7 @@ function filterData() {
       element.title.toUpperCase().includes(input.value.toUpperCase())
     );
     console.log(filteredArray);
-    
+
     renderData(filteredArray);
   });
 }
@@ -83,6 +104,25 @@ async function init() {
   filterData();
 }
 
+function burgerMenu() {
+  const burgerMenuButton = document.querySelector(".burger-menu");
+  const burgerIcon = document.querySelector(".burger-menu img");
+  const navContainer = document.querySelector(".navigation-container");
+
+  burgerMenuButton.addEventListener("click", () => {
+    // Check if the current icon is the burger menu icon
+    if (burgerIcon.src.includes("burger-menu-icon.svg")) {
+      burgerIcon.src = "./assets/close-icon.svg";
+      navContainer.classList.add("active");
+    } else {
+      burgerIcon.src = "./assets/burger-menu-icon.svg";
+      navContainer.classList.remove("active");
+    }
+  });
+}
+
 init();
+burgerMenu();
+
 
 window.addEventListener("load", arrowsFunctionality);

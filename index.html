@@ -23,32 +23,36 @@
       </div>
 
       <nav class="navbar-header">
-        <div class="logo">
-          <a href="#" class="logo-link">SHOP.CO</a>
+        <div class="logo-burger-container">
+          <div class="logo">
+            <a href="#" class="logo-link">SHOP.CO</a>
+          </div>
+          <div class="burger-menu">
+            <img src="./assets/burger-menu-icon.svg" alt="burger menu" />
+          </div>
         </div>
 
-        <div class="burger-menu">
-          <img src="./assets/burger-menu-icon.svg" alt="burger menu" />
-        </div>
-        <ul>
-          <li>
-            Shop <img src="./assets/dropdown-icon.svg" alt="dropdown arrow" />
-          </li>
-          <li><a href="#">On Sale</a></li>
-          <li><a href="#products">New Arrivals</a></li>
-          <li><a href="#">Brands</a></li>
-        </ul>
-        <div class="search-bar">
-          <img src="./assets/search-icon.svg" alt="search icon" />
-          <input type="text" placeholder="Search for products..." />
-        </div>
-        <div class="personal-navbar">
-          <a href="#">
-            <img src="./assets/cart-icon.svg" alt="cart icon" />
-          </a>
-          <a href="#">
-            <img src="./assets/profile-icon.svg" alt="profile icon" />
-          </a>
+        <div class="navigation-container">
+          <ul>
+            <li>
+              Shop <img src="./assets/dropdown-icon.svg" alt="dropdown arrow" />
+            </li>
+            <li><a href="#">On Sale</a></li>
+            <li><a href="#products">New Arrivals</a></li>
+            <li><a href="#">Brands</a></li>
+          </ul>
+          <div class="search-bar">
+            <img src="./assets/search-icon.svg" alt="search icon" />
+            <input type="text" placeholder="Search for products..." />
+          </div>
+          <div class="personal-navbar">
+            <a href="#">
+              <img src="./assets/cart-icon.svg" alt="cart icon" />
+            </a>
+            <a href="#">
+              <img src="./assets/profile-icon.svg" alt="profile icon" />
+            </a>
+          </div>
         </div>
       </nav>
     </header>
@@ -113,9 +117,61 @@
           <img src="./assets/calvin-klein-logo.svg" alt="calvin klein logo" />
         </div>
       </section>
-      <section class="new-arrivals">
+      <section class="new-arrivals products-section">
         <h2 id="products">NEW ARRIVALS</h2>
         <div class="products"></div>
+        <a class="view-all-link" href="#products">
+          <div class="view-all-button">View All</div>
+        </a>
+      </section>
+
+      <section class="top-selling products-section">
+        <h2 id="top-products">TOP SELLING</h2>
+        <div class="products">
+
+          <div class="product">
+            <div class="product-image">
+              <img
+                src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+                alt="product image"
+              />
+            </div>
+            <p class="product-title">Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</p>
+            <div class="rating">
+              <div class="rating-stars">
+                <img src="./assets/star-icon.svg" alt="star icon" />
+                <img src="./assets/star-icon.svg" alt="star icon" />
+                <img src="./assets/star-icon.svg" alt="star icon" />
+                <img src="./assets/star-icon.svg" alt="star icon" />
+              </div>
+              <p>4.0/<span>5</span></p>
+            </div>
+            <p class="product-price">$109.95</p>
+          </div>
+
+          <div class="product">
+            <div class="product-image">
+              <img
+                src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+                alt="product image"
+              />
+            </div>
+            <p class="product-title">Mens Casual Premium Slim Fit T-Shirts</p>
+            <div class="rating">
+              <div class="rating-stars">
+                <img src="./assets/star-icon.svg" alt="star icon" />
+                <img src="./assets/star-icon.svg" alt="star icon" />
+                <img src="./assets/star-icon.svg" alt="star icon" />
+                <img src="./assets/star-icon.svg" alt="star icon" />
+              </div>
+              <p>4.0/<span>5</span></p>
+            </div>
+            <p class="product-price">$22.3</p>
+          </div>
+        </div>
+        <a class="view-all-link" href="#products">
+          <div class="view-all-button">View All</div>
+        </a>
       </section>
       <section class="categories">
         <h2>BROWSE BY DRESSS STYLE</h2>
