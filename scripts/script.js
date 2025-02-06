@@ -32,9 +32,14 @@ function card(imageSrc, title, rating, price) {
 }
 
 async function fetchData() {
-  const response = await fetch("https://fakestoreapi.com/products");
-  products = (await response.json()).slice(0, 8);
-  renderData(products);
+  try {
+    const response = await fetch("https://fakestoreapi.com/products");
+    products = (await response.json()).slice(0, 8);
+    renderData(products);
+
+  } catch(e) {
+    console.error("Couldn't fetch product data", e);
+  }
 }
 
 async function renderData(productArray) {
